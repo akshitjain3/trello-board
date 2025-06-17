@@ -1,54 +1,110 @@
-# React + TypeScript + Vite
+# 📝 Task Manager Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+A kanban-style task board built with **React** and **React DnD**, supporting:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Drag & Drop tasks between categories
+- 🆕 Add/Edit Tasks with modals
+- 🗂️ Create new categories dynamically
+- 🧲 Custom drag preview for tasks
+- 📦 Modular, maintainable codebase
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📦 Task Management
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Add/Edit tasks with title, description, and category
+- Real-time updates reflected across the board
+
+### 📤 Drag & Drop (powered by `react-dnd`)
+
+- Move tasks between columns
+- Visual drag preview follows the cursor
+
+### ➕ Category Management
+
+- Dynamically add new categories
+- Insert category at specific position
+- Define custom "Next Phase" and "Previous Phase" texts
+
+### 🧠 Custom Hooks
+
+- `useOutsideClick`: Detects outside clicks to close modals
+
+---
+
+## ✨ UI Preview
+
+![App Screenshot](./screenshots/default-load.png)
+
+![Modal Screenshot1](./screenshots/modal.png)
+
+![Modal Screenshot2](./screenshots/modal2.png)
+
+![Drag & Drop](./screenshots//drag-drop-preview.png)
+
+![Settings Dropdown](./screenshots/Editing%20task-Moving%20to%20next%20phase.png)
+
+---
+
+## 📁 Folder Structure (Simplified)
+
+src/
+
+├── App.tsx # Main application component
+
+├── components/
+
+│ ├── TaskCategory.tsx # Column/category component
+
+│ ├── TaskItem.tsx # Individual task card
+
+│ ├── AddCategory.tsx # Category creation
+
+│ ├── DragPreview.tsx # Custom implementation of the preview of content when dragging
+
+│ ├── CustomTrelloModal.tsx # Task modals
+
+│ └── custom-hooks/
+
+│ └── useOutsideClick.tsx # Custom hook
+
+└── App.css # Base styles
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 19+**
+- **TypeScript**
+- **Tailwind CSS** for styling
+- **React DnD** for drag and drop
+- **Custom Hooks** for modal behavior
+
+---
+
+## Code Architecture Highlights
+
+1.  **Type Safety:** Comprehensive TypeScript interfaces for all data structures
+
+2.  **Performance Optimizations:**
+    -- Memoized callbacks with useCallback
+    -- Efficient state updates with immutable patterns
+
+3.  **Accessibility Considerations**: Clear visual feedback for drag operations
+
+## 🧪 Run Locally
+
+```bash
+git  clone  https://github.com/akshitjain3/trello-board.git
+cd  task-manager-board
+npm  install
+npm  run  dev
 ```

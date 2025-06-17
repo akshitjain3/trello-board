@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useOutsideClick from "../assets/custom-hooks/useOutsideClick";
+import useOutsideClick from "./custom-hooks/useOutsideClick";
 import type { Task } from "../App";
 
 type ModifiedTask = Task & {

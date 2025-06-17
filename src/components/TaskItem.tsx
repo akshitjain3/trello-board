@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import type { Task } from "../App";
-import useOutsideClick from "../assets/custom-hooks/useOutsideClick";
+import useOutsideClick from "./custom-hooks/useOutsideClick";
 import Modal from "./CustomTrelloModal";
 import { useDrag } from "react-dnd";
 import { getEmptyImage } from "react-dnd-html5-backend";
