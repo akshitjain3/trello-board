@@ -90,6 +90,13 @@ src/
 
 ---
 
+## 🌐 Live Demo
+
+Check out the live version of the Task Manager Board here:  
+👉 [Live Site on GitHub Pages](https://akshitjain3.github.io/trello-board/)
+
+---
+
 ## Code Architecture Highlights
 
 1.  **Type Safety:** Comprehensive TypeScript interfaces for all data structures
